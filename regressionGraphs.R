@@ -1,7 +1,6 @@
 suppressPackageStartupMessages({
   library(tidyverse)
   library(pdp)
-  library(fastshap)
   library(caret)
   library(pROC)
   library(viridis)
@@ -100,22 +99,6 @@ process_one <- function(model_file, mode) {
   subtxt <- sprintf("%s | target: %s", ds, tgt)
   walk(top3, ~ pdp_ice(mod, .x, X, dir, subtxt, ylab, pf))
   
-  shap <- explain(mod, X = X, nsim = 100, pred_wrapper = wrap) |> as_tibble()
-  write_csv(shap, file.path(dir, "shap_values.csv"))
-  
-  shap_mean <- shap |>
-    summarise(across(all_of(top3), ~ mean(abs(.x), na.rm = TRUE))) |>
-    pivot_longer(everything(), names_to = "feature", values_to = "mean_abs")
-  write_csv(shap_mean, file.path(dir, "shap_summary.csv"))
-  
-  ggsave(file.path(dir, "shap_summary.png"),
-         ggplot(shap_mean, aes(reorder(feature, mean_abs), mean_abs, fill = mean_abs)) +
-           geom_col() + coord_flip() + scale_fill_viridis(option = "D") +
-           labs(title = "Mean |SHAP| (top 3)", subtitle = subtxt,
-                caption = "Higher bars → stronger influence",
-                x = "Feature", y = "Mean |SHAP|") +
-           theme_minimal(base_size = 14),
-         width = 8, height = 5, dpi = 300)
   
   if (mode == "clf") {
     p80 <- quantile(train[[tgt]], 0.8, na.rm = TRUE)
