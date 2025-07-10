@@ -1,7 +1,6 @@
 suppressPackageStartupMessages({
   library(tidyverse)
   library(pdp)
-  library(fastshap)
   library(caret)
   library(pROC)
   library(viridis)
