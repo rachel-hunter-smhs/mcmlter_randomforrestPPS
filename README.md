@@ -57,4 +57,4 @@ output_root/
 ## Notes
 - File paths are hard coded for the original author's environment; modify them to match your own directory layout.
 - Some scripts read intermediate outputs produced by others, so run them in the order shown above.
-- The repository does not include the CSV input data or the generated result directories.
+- The repository does not include the CSV input data or the generated result directories. Links are provided in the paper. 
