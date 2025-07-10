@@ -7,10 +7,10 @@ This repository contains a collection of R scripts for generating Random Forest 
 | Script | Purpose |
 |-------|---------|
 | `RandomForestTreesBetterModeling.R` | Build Random Forest models, split each dataset into training/validation/test sets, and save outputs under `processed/`, `classification/`, and `regression/`. |
-| `checkAndCreateMissing.R` | Generate missing metrics and diagnostic plots for saved models. |
+| `checkAndCreateMissing.R` | Most comprehensive graph file. Checks if the other graph files made something then makes it if it is missing.  | 
 | `classificationGraphs.R` | Produce additional classification model graphs such as PDP, ICE, calibration, and interaction heatmaps. |
 | `regressionGraphs.R` | Generate PDP/ICE and ROC curves for regression and classification models. |
-| `PDPNew.R` | Create partial dependence plots for top features from each saved model. |
+| `PDPNew.R` | Fixes errors in Classification and Regression graph|
 | `PPSheatEncoding.R` | Compute Predictive Power Scores and plot heatmaps. |
 | `combineAndKeepCatergorical.R` | Preprocess CSV files and compute PPS while retaining categorical variables. |
 | `statsMetrics.R` | Helper functions for summarising model metrics. |
@@ -57,4 +57,4 @@ output_root/
 ## Notes
 - File paths are hard coded for the original author's environment; modify them to match your own directory layout.
 - Some scripts read intermediate outputs produced by others, so run them in the order shown above.
-- The repository does not include the large CSV input data or the generated result directories.
+- The repository does not include the CSV input data or the generated result directories.
