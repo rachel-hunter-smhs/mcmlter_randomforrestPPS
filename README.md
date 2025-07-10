@@ -1,4 +1,4 @@
-# mcmlter_randomforrestPPS
+# Investigation of the Factors Influencing Soil Biota Populations and Soil Properties in the McMurdo Dry Valley
 
 This repository contains a collection of R scripts for generating Random Forest models, creating diagnostics, and computing Predictive Power Scores (PPS) on soil sample data from the McMurdo Dry Valleys Long-Term Ecological Research (LTER) project. The workflow cleans the data, fits classification and regression models, and creates a variety of plots and metrics.
 
