@@ -14,6 +14,9 @@ This repository contains a collection of R scripts for generating Random Forest 
 | `PPSheatEncoding.R` | Compute Predictive Power Scores and plot heatmaps. |
 | `combineAndKeepCatergorical.R` | Preprocess CSV files and compute PPS while retaining categorical variables. |
 | `statsMetrics.R` | Helper functions for summarising model metrics. |
+| `Validation.R` | Any file with the word validation returns valuable validation metrics that help the data to be useful |
+| `Leakage.R` | Returns leakabge metrics |
+
 
 ## Dependencies
 These scripts rely on several R packages including **tidyverse**, **caret**, **randomForest**, **pROC**, **PRROC**, **fastDummies**, **pdp**, **viridis**, and **fs**.
